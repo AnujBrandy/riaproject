@@ -1,0 +1,126 @@
+<% provide(:title, @artist.name) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+        <%= gravatar_for @artist %>
+        <%= @artist.name %>
+      </h1>
+    </section>
+  </aside>
+</div>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @artist.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @artist.email %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @artist.password %>
+</p>
+
+<p>
+  <strong>Gravatar url:</strong>
+  <%= @artist.gravatar_url %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @artist.description %>
+</p>
+
+<p>
+  <strong>Skill:</strong>
+  <%= @artist.skill %>
+</p>
+
+<p>
+  <strong>Experience:</strong>
+  <%= @artist.experience %>
+</p>
+
+<p>
+  <strong>Facebook url:</strong>
+  <%= @artist.facebook_url %>
+</p>
+
+<p>
+  <strong>Twitter url:</strong>
+  <%= @artist.twitter_url %>
+</p>
+
+<p>
+  <strong>Contact no:</strong>
+  <%= @artist.contact_no %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @artist.address %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @artist.country %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @artist.state %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @artist.city %>
+</p>
+
+<p>
+  <strong>Availability:</strong>
+  <%= @artist.availability %>
+</p>
+
+<p>
+  <strong>Youtube url:</strong>
+  <%= @artist.youtube_url %>
+</p>
+
+<p>
+  <strong>Behance url:</strong>
+  <%= @artist.behance_url %>
+</p>
+
+<p>
+  <strong>Facebook page:</strong>
+  <%= @artist.facebook_page %>
+</p>
+
+<p>
+  <strong>Blog url:</strong>
+  <%= @artist.blog_url %>
+</p>
+
+<p>
+  <strong>Website url:</strong>
+  <%= @artist.website_url %>
+</p>
+
+<p>
+  <strong>Other url:</strong>
+  <%= @artist.other_url %>
+</p>
+
+<p>
+  <strong>Motto line:</strong>
+  <%= @artist.motto_line %>
+</p>
+
+<%= link_to 'Edit', edit_artist_path(@artist) %> |
+<%= link_to 'Back', artists_path %>

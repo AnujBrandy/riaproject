@@ -1,0 +1,78 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+        <%= link_to ":Artisto", '#', id: "logo" %>
+        <nav>
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+            <table id="GeoResults"></table>  
+
+        
+                <script type="text/javascript" src="http://l2.io/ip.js?var=myip"></script>
+                                                              <!-- ^^^^ -->
+                      <script>var t = myip ;</script>
+                              <script>
+                                
+                              $.getJSON("http://ip-api.com/json/" + t, function(data) {
+                                  
+                                   table_body = data.city ;
+                                  
+                                  $("#GeoResults").html(table_body);
+                              });
+                              </script>
+
+            </li>
+            <li><%= link_to "Advice", '#' %></li>
+            <li><%= link_to "Home",   root_path %></li>
+            <li><%= link_to "Help",   help_path %></li>
+          <% if logged_in? %>
+            <li><%= link_to "Users", users_path %></li>
+                      <li><%= link_to "Artists", artists_path %></li>
+            
+            <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              Account <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "Profile", current_user %></li>
+              <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+              
+              <li class="divider"></li>
+              <li>
+                <%= link_to "Log out", logout_path, method: "delete" %>
+              </li>
+            </ul>
+            </li>
+          <% elsif logged_in_artist?  %>
+                      <li><%= link_to "Artists", artists_path %></li>
+                      <li><%= link_to "Users", users_path %></li>
+            
+            <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              Account <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "Profile", current_artist %></li>
+              <li><%= link_to "Settings", edit_artist_path(current_artist) %></li>
+              
+              <li class="divider"></li>
+              <li>
+                <%= link_to "Log out", logout_artist_path, method: "delete" %>
+              </li>
+            </ul>
+            </li>
+            <% else %>
+           <li><%= link_to "Log in", login_path %></li>
+           <li><%= link_to "Register", signup_users_path %></li>
+           <li><%= link_to "Log in for Artists", login_artist_path %></li>
+           <li><%= link_to "Register for Artists", signup_artists_path %></li>
+        
+        <% end %>
+        
+        
+            
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    

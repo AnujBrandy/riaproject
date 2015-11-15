@@ -1,0 +1,85 @@
+<% provide(:title, 'Sign up') %>
+<h1>Sign up</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@artist) do |f| %>
+      <%= render 'shared/error_messages_artists' %>
+
+
+      
+      <%= f.label :name %>
+      <%= f.text_field :name , class: 'form-control'%>
+
+      <%= f.label :email  %>
+      <%= f.email_field :email , class: 'form-control' %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password , class: 'form-control' %>
+
+      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.password_field :password_confirmation , class: 'form-control' %>
+      
+      <%= f.label :description %>
+      <%= f.text_field :description , class: 'form-control' %>
+      
+      <%= f.label :skill %>
+      <%= f.text_field :skill , class: 'form-control' %>
+      
+      <%= f.label :experience %>
+      <%= f.number_field :experience , class: 'form-control' %>
+      
+      <%= f.label :facebook_url %>
+      <%= f.url_field :facebook_url , class: 'form-control' %>
+      
+      <%= f.label :twitter_url %>
+      <%= f.url_field :twitter_url , class: 'form-control' %>
+      
+      <%= f.label :contact_no %>
+      <%= f.telephone_field :contact_no , class: 'form-control' %>
+      
+      <%= f.label :address %>
+      <%= f.text_field :address , class: 'form-control' %>
+      
+      <%= f.label :country %>
+      <%= f.text_field :country , class: 'form-control' %>
+      
+      <%= f.label :state %>
+      <%= f.text_field :state , class: 'form-control' %>
+      
+      <%= f.label :city %>
+      <%= f.text_field :city , class: 'form-control' %>
+      
+      <%= f.label :availability %>
+      <%= f.text_field :availability , class: 'form-control' %>
+      
+
+      <%= f.label :youtube_url %>
+      <%= f.url_field :youtube_url , class: 'form-control' %>
+      
+      <%= f.label :behance_url %>
+      <%= f.url_field :behance_url , class: 'form-control' %>
+      
+      <%= f.label :facebook_page %>
+      <%= f.url_field :facebook_page , class: 'form-control' %>
+      
+      <%= f.label :blog_url %>
+      <%= f.url_field :blog_url , class: 'form-control' %>
+      
+      <%= f.label :website_url %>
+      <%= f.url_field :website_url , class: 'form-control' %>
+      
+      <%= f.label :other_url %>
+      <%= f.url_field :other_url , class: 'form-control' %>
+      
+      <%= f.label :motto_line %>
+      <%= f.text_field :motto_line , class: 'form-control' %>
+      
+
+
+
+
+      <%= f.submit "Create my account", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
